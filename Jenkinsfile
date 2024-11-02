@@ -55,11 +55,11 @@ pipeline {
         }
     }
     post {
-        always {
-            // Clean up Docker container and images if needed
-            sh "docker rm -f ${APP_NAME} || true"
-            sh "docker rmi ${DOCKER_IMAGE} || true"
-        }
+        // always {
+        //     // Clean up Docker container and images if needed
+        //     sh "docker rm -f ${APP_NAME} || true"
+        //     sh "docker rmi ${DOCKER_IMAGE} || true"
+        // }
         success {
             echo 'The pipeline has completed successfully!'
         }
