@@ -35,13 +35,13 @@ pipeline {
                     // Create a Docker image for the app
                     sh "docker build -t ${DOCKER_IMAGE} ."
                     
-                    // Login to Docker Hub (replace credentials with your credentials or Jenkins credentials)
-                    withCredentials([usernamePassword(credentialsId: 'eddabcf8-673d-4395-a9d1-14077f64aa08', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
-                        sh "echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_USERNAME} --password-stdin"
-                    }
+                    // // Login to Docker Hub (replace credentials with your credentials or Jenkins credentials)
+                    // withCredentials([usernamePassword(credentialsId: 'eddabcf8-673d-4395-a9d1-14077f64aa08', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+                    //     sh "echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_USERNAME} --password-stdin"
+                    // }
                     
-                    // Push the image to Docker Hub
-                    sh "docker push ${DOCKER_IMAGE}"
+                    // // Push the image to Docker Hub
+                    // sh "docker push ${DOCKER_IMAGE}"
                 }
             }
         }
